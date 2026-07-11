@@ -2,7 +2,7 @@
 
 ## Problem
 
-Given a newspaper heading and a target letter, determine whether the letter can be formed by cutting characters from the heading. Each non-space character in the heading can be used at most once, while spaces do not need to be cut and can be inserted freely.
+Given a newspaper heading and a target letter, determine whether the letter can be formed by cutting characters from the heading. Each non-space character in the heading can be used at most once, while spaces do not need to be cut and can be inserted freely
 
 ## Example
 
