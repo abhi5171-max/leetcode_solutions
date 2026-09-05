@@ -80,3 +80,7 @@
 #   result = f"{(result)}"
   
 # print(result)
+
+n = int(input())
+pos = [0] * (n + 1)
+print(pos)
