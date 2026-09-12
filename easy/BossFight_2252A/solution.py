@@ -8,7 +8,7 @@ for _ in range(t):
 
     freq = Counter(a)
 
-    max_val = max(freq, key=freq.get)
+    max_val = max(freq, key=lambda value: freq[value])
     max_freq = freq[max_val]
 
     total_sum = sum(a)
