@@ -214,6 +214,7 @@ does **not** allow arbitrary swaps.
 It creates independent connected components based on the odd part of the index.
 
 ### Groups
-
 ```text
 1:  1, 2, 4, 8, 16, ...
+
+
