@@ -5,15 +5,34 @@ for _ in range(t):
     a = list(map(int, input().split()))
 
     x = a[0]
-    ans = 0
+    pos = -1
 
-    # Check starting blocks where the pattern
-    # may cross into another block.
-    for k in range(x, min(n, x + m - 2) + 1):
+    # Find the first decrease or equal adjacent element
+    for i in range(1, m):
+        if a[i] <= a[i - 1]:
+            pos = i
+            break
+
+    if pos == -1:
+        # Pattern must be consecutive increasing numbers
+        if all(a[i] == x + i for i in range(m)):
+            print(max(0, n - x - m + 2))
+        else:
+            print(0)
+
+    else:
+        # Determine the starting block
+        k = x + pos - 1
+
+        if k > n:
+            print(0)
+            continue
+
         block = k
         val = x
         match = True
 
+        # Verify the pattern
         for j in range(m):
             if val != a[j]:
                 match = False
@@ -25,12 +44,4 @@ for _ in range(t):
             else:
                 val += 1
 
-        if match:
-            ans += 1
-
-    # Check blocks where the entire pattern
-    # fits inside the same block.
-    if all(a[i] == x + i for i in range(m)):
-        ans += max(0, n - x - m + 2)
-
-    print(ans)
+        print(1 if match else 0)
